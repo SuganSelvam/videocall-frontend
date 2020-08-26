@@ -11,6 +11,7 @@ function Login(props) {
     const [LoginUsername, setLoginUsername] = useState("")
     const [LoginPassword, setLoginPassword] = useState("")
 
+
     //State for Storing Register Input & password Feilds
     const [RegisterUsername , setRegisterUsername] = useState("")
     const [RegisterPassword1 , setRegisterPassword1] = useState("")
@@ -100,6 +101,9 @@ function Login(props) {
                 </div>
                 <div>
                     <input type="password" id="LoginPassword"  placeholder="Enter Your Password" onChange={e => setLoginPassword(e.target.value)}></input>
+                </div>
+                <div>
+                <input type="text" id="RoomId"  placeholder="Enter A Room ID" onChange={e => props.setLoginRoomID(e.target.value)} ></input>
                 </div>
                     <button type="submit" id="btn" onClick={submitLogin}>Submit</button>
             </div>

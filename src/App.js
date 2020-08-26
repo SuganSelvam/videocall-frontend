@@ -7,13 +7,14 @@ import Dashboard from "./Components/Dashboard";
 function App() {
   const [state, setstate] = useState("Login");
   const [name, setName] = useState("");
+  const [LoginRoomID, setLoginRoomID] = useState("")
 
   return (
     <div>
         {state === "Login" ? (
-          <Login setName={setName} setstate={setstate} />
+          <Login setName={setName} setstate={setstate} setLoginRoomID={setLoginRoomID}/>
         ) : (
-          <Dashboard name={name} />
+          <Dashboard name={name} LoginRoomID={LoginRoomID} />
         )}
     </div>
   );
