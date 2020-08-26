@@ -1,13 +1,20 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css"
 
-import Dashboard from "./Components/Dashboard"
+import Login from "./Components/Login";
+import Dashboard from "./Components/Dashboard";
 
 function App() {
+  const [state, setstate] = useState("Login");
+  const [name, setName] = useState("");
+
   return (
-    <div className="App">
-        <h2>Hello There</h2>
-        <Dashboard />
+    <div>
+        {state === "Login" ? (
+          <Login setName={setName} setstate={setstate} />
+        ) : (
+          <Dashboard name={name} />
+        )}
     </div>
   );
 }
