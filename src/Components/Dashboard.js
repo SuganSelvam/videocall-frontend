@@ -57,7 +57,7 @@ function startStream(miniVideo, stream) {
         });
     }
   });
-  VideoBox.append(miniVideo);
+  VideoBox.appendChild(miniVideo);
 }
 
 function Dashboard(props) {
