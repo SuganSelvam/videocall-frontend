@@ -4,7 +4,8 @@ import io from "socket.io-client";
 import Peer from "peerjs";
 
 //Change Endpoint to local Host if You are runnign along with backend
-const ENDPOINT = "http://localhost:4040/";
+// const ENDPOINT = "http://localhost:4040/";
+const ENDPOINT = "https://task1-backend.herokuapp.com/";
 
 //Creating socket to connect to SERVER
 var socket = io.connect(ENDPOINT);
@@ -18,7 +19,7 @@ miniVideo.muted = true;
 
 const peers = {};
 
-navigator.getUserMedia = (
+navigator.getUserMedia = ~(
   navigator.getUserMedia ||
   navigator.webkitGetUserMedia ||
   navigator.mozGetUserMedia ||
