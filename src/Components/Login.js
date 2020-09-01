@@ -1,10 +1,12 @@
 import React,{useState} from 'react'
+import { useHistory } from 'react-router-dom'
 
 function Login(props) {
+    const history = useHistory()
 
     //Change Endpoint to local Host if You are runnign along with backend
-    // const url ="http://localhost:4040/"
-    const url ="https://task1-backend.herokuapp.com/"
+    const url ="http://localhost:4040/"
+    // const url ="https://task1-backend.herokuapp.com/"
 
 
     //State for storing Login Input & Pasword Feilds
@@ -43,8 +45,9 @@ function Login(props) {
                 //If Hash & password comparing is true Server Sends Result
                 if(value.result === true){
                     console.log("Sucessfully Logging in")
-                    props.setstate("Dashboard")
-                    props.setName(value.dataUser[0].name)
+                    history.push('/dashboard')
+                    console.log(value.dataUser)
+                    props.setUserID(value.dataUser[0]._id)
                 }
                 else{
                     alert("Password Incorrect")
@@ -102,9 +105,9 @@ function Login(props) {
                 <div>
                     <input type="password" id="LoginPassword"  placeholder="Enter Your Password" onChange={e => setLoginPassword(e.target.value)}></input>
                 </div>
-                <div>
+                {/* <div>
                 <input type="text" id="RoomId"  placeholder="Enter A Room ID" onChange={e => props.setLoginRoomID(e.target.value)} ></input>
-                </div>
+                </div> */}
                     <button type="submit" id="btn" onClick={submitLogin}>Submit</button>
             </div>
 
